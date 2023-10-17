@@ -1,4 +1,5 @@
 window.onload = function() {
+    var selectedElement = "";
     var playerList = [];
 
     $("#player-input").on('keyup', function (e) {
@@ -63,6 +64,50 @@ window.onload = function() {
         updatePlayers();
     });
 
+    document.addEventListener("mousedown", function(e) {
+        if (e.target.className == "player" || e.target.className == "player-list-item") {
+            selectedElement = e.target;
+            e.target.classList.add("selected");
+        }
+    });
+    document.addEventListener("mouseup", function(e) {
+        let selected = document.getElementsByClassName("selected");
+        for (let i = 0; i < selected.length; i++) {
+            selected[i].classList.remove("selected");
+            e.target.style.border = "";
+        };
+
+        if (e.target.className == "player") {
+            if (selectedElement.className == "player-list-item") {
+                let i = playerList.indexOf(e.target.innerText);
+                playerList[i] = selectedElement.innerText;
+            }
+            if (e.target.innerText != selectedElement.innerText) {
+                swapPlayers(selectedElement.innerText, e.target.innerText);
+            }
+
+            updatePlayers();
+        }
+        
+        selectedElement = "";
+    });
+    document.addEventListener("mouseover", function(e) {
+        if (selectedElement == "")
+            return;
+
+        if (e.target.className == "player") {
+            e.target.style.border = "5px solid yellow";
+        }
+    });
+    document.addEventListener("mouseout", function(e) {
+        if (selectedElement == "")
+            return;
+
+        if (e.target.className == "player") {
+            e.target.style.border = "";
+        }
+    });
+
     function updatePlayers() {
         for (let i = 0; i < playerList.length; i++) {
             let s = "player-" + (i+1);
@@ -74,6 +119,33 @@ window.onload = function() {
                 let s = "player-" + (i+1);
                 document.getElementById(s).innerText = "";
             }
+        }
+    }
+
+    function swapPlayers(player1, player2) {
+        if (player1 === player2) {
+          return;
+        }
+
+        let index1 = -1, index2 = -1;
+        for (let i = 0; i < playerList.length; i++) {
+            if (playerList[i] === player1) {
+                index1 = i;
+            }
+
+            if (playerList[i] === player2) {
+                index2 = i;
+            }
+
+            if (index1 !== -1 && index2 !== -1) {
+                break;
+            }
+        }
+
+        if (index1 !== -1 && index2 !== -1) {
+            let temp = playerList[index1];
+            playerList[index1] = playerList[index2];
+            playerList[index2] = temp;
         }
     }
 

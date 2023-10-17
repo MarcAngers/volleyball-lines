@@ -26,6 +26,7 @@
     font-weight: 400;
     font-size: 20px;
     overflow: hidden;
+    user-select: none;
 }
 .remove-button {
     float: right;
@@ -75,6 +76,10 @@
     font-weight: 600;
     font-size: 20px;
     overflow: hidden;
+    user-select: none;
+}
+.selected {
+    border: 5px solid lightgreen;
 }
 .column {
     display: inline;
