@@ -31,11 +31,24 @@ window.onload = function() {
         if (playerName == null || playerName == "")
             return;
 
+        document.getElementById(("playerList-item-" + playerName)).remove();
+        if (playerList.length > 6) {
+            let array = document.getElementsByClassName("player");
+            let maxObject = array[0];
+            let maxValue = array[0].id;
+
+            for (let i = 1; i < array.length; i++) {
+                if (array[i].id > maxValue) {
+                    maxObject = array[i];
+                    maxValue = array[i].id;
+                }
+            }
+
+            maxObject.remove();
+        }
+
         let index = playerList.indexOf(playerName);
         playerList.splice(index, 1);
-
-        document.getElementById(("playerList-item-" + playerName)).remove();
-
         updatePlayers();
     }
 
@@ -51,7 +64,6 @@ window.onload = function() {
     });
 
     function updatePlayers() {
-        console.log(document.getElementsByClassName("player"));
         for (let i = 0; i < playerList.length; i++) {
             let s = "player-" + (i+1);
             document.getElementById(s).innerText = playerList[i];
