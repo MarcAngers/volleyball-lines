@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<script src="./script.js"></script>
+<link rel="stylesheet" href="./style.css">
+
+
+<html>
+    <body style="overflow: hidden">
+        <div id="sidebar">
+            <div id="sidebar-title">
+                <h2>Player List:</h2>
+            </div>
+            <div id="player-input-wrapper">
+                <input type="text" name="player-input" id="player-input" placeholder="Add player...">
+                <button class="btn btn-sm btn-primary" id="add-player-button"><span class="glyphicon glyphicon-ok"></span></button>
+            </div>
+            <div id="player-list"></div>
+        </div>
+        <div id="main-view">
+            <div id="gym">
+                <div id="bench"></div>
+                <div id="court">
+                    <div id="net"></div>
+                    <div id="player-grid">
+                        <div class="column" id="left">
+                            <div class="player" id="player-3" style="margin-bottom: 60px"></div>
+                            <div class="player" id="player-2"></div>
+                        </div>
+                        <div class="column" id="mid">
+                            <div class="player" id="player-4" style="margin-bottom: 60px"></div>
+                            <div class="player" id="player-1"></div>
+                        </div>
+                        <div class="column" id="right">
+                            <div class="player" id="player-5" style="margin-bottom: 60px"></div>
+                            <div class="player" id="player-6"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="controls">
+                <button id="rotate-backwards"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                <button id="rotate-forwards"><span class="glyphicon glyphicon-chevron-right"></span></button>
+            </div>
+        </div>
+    </body>
+</html>

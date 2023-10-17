@@ -1,0 +1,91 @@
+#sidebar {
+    float: left;
+    height: 100vh;
+    width: 25vw;
+    padding: 20px;
+    background-color: #aaaaaa;
+}
+#player-list {
+    min-width: 80%;
+}
+#player-input {
+    width: 80%;
+    height: 30px;
+}
+#add-player-button {
+    float: right;
+}
+.player-list-item {
+    justify-content: space-between;
+    background-color: #dddddd;
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    overflow: hidden;
+}
+.remove-button {
+    float: right;
+}
+
+#main-view {
+    float: right;
+    height: 100vh;
+    width: 75vw;
+    padding: 30px;
+}
+#gym {
+    height: 350px;
+}
+
+#net { 
+    width: 100%;
+    height: 10px;
+    background-color: black;
+}
+#bench {
+    width: 150px;
+    float: left;
+}
+#court {
+    width: 610px;
+    background-color: #ffcc55;
+    padding: 20px;
+    margin: 10px;
+    float: right;
+}
+#player-grid {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.player {
+    width: 150px;
+    height: 50px;
+    border: 5px solid black;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    overflow: hidden;
+}
+.column {
+    display: inline;
+}
+
+#controls {
+    text-align: center;
+}
+#rotate-forwards, #rotate-backwards {
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+    margin-top: 0px;
+}
