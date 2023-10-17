@@ -1,7 +1,7 @@
 #sidebar {
     float: left;
     height: 100vh;
-    width: 25vw;
+    width: 300px;
     padding: 20px;
     background-color: #aaaaaa;
 }
@@ -33,9 +33,9 @@
 }
 
 #main-view {
-    float: right;
+    float: left;
     height: 100vh;
-    width: 75vw;
+    width: 880px;
     padding: 30px;
 }
 #gym {

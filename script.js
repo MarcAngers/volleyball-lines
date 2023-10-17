@@ -155,7 +155,7 @@ window.onload = function() {
         benchItem.id = "player-" + playerList.length;
         benchItem.innerText = playerName;
 
-        document.getElementById("bench").appendChild(benchItem);
+        document.getElementById("bench").prepend(benchItem);
     }
     function addPlayerListItem(playerName) {
         let listItem = document.createElement("div");
